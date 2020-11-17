@@ -6,6 +6,11 @@ public class GameManager : MonoBehaviour
     public Transform play1;
     [Header("雞")]
     public Transform play2;
+    [Header("太空人動畫元件")]
+    public Animator aniplay1;
+    [Header("雞動畫元件")]
+    public Animator aniplay2;
+
 
     private void Start()
     {
@@ -15,8 +20,28 @@ public class GameManager : MonoBehaviour
     {
         print("更新事件");
         
-
-        
     }
+
+    public void run()
+    {
+        print("跑步");
+        aniplay1.SetTrigger("跑步");
+        aniplay2.SetTrigger("跑步");
+    }
+    public void walk()
+    {
+        print("走路");
+        aniplay1.SetTrigger("走路");
+        aniplay2.SetTrigger("走路");
+
+    }
+    public void PlayAnimation(string aniName)
+    {
+        print(aniName);
+        aniplay1.SetTrigger(aniName);
+        aniplay2.SetTrigger(aniName);
+
+    }
+
 }
 
